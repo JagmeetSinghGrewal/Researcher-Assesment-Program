@@ -1,0 +1,52 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RAP"
+        xmlns:Model="clr-namespace:RAP.Model"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:View="clr-namespace:RAP.View" x:Class="RAP.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Width="1035" Height="606" MinWidth="1035" MinHeight="606"
+        Name="MainWindowObject">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="24"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="204"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="204"/>
+        </Grid.ColumnDefinitions>
+
+        <!--top border-->
+        <Border BorderBrush="Black" BorderThickness="1" Grid.ColumnSpan="3" Height="Auto">
+            <!--Button to generate reports-->
+            <Button Content="Generate Reports" Margin="9.2,1.2,907.2,0.8" Click="Generate_Reports" Height="Auto" Width="100" HorizontalAlignment="Left"/>
+        </Border>
+        <!--Researcher list-->
+        <View:ResearcherListView x:Name="ResearcherListView" Width="Auto" Height="Auto" Grid.Row="1" VerticalAlignment="Stretch"/>
+        <!--Researcher details-->
+        <View:ResearcherDetailsView x:Name="ResearcherDetailView" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="1"/>
+        <!--Third column-->
+        <Border BorderBrush="Gray" BorderThickness="1" Grid.Column="2" Grid.Row="1" Width="Auto" Height="Auto" VerticalAlignment="Stretch">
+            <TabControl>
+                <!--Supervisions list-->
+                <TabItem Header="Supervisions" Margin="0" Width="81">
+                    <View:SupervisionsListView x:Name="SupervisionsListView"/>
+                </TabItem>
+                <!--Culmulative publications count-->
+                <TabItem Header="Cumulative Count" Margin="0" Width="117">
+                    <View:CumulativeCountView x:Name="CumulativeCountView"/>
+                </TabItem>
+                <!--Publication details-->
+                <TabItem Header="Publication Details" Margin="0" Width="198">
+                    <View:PublicationDetailsView x:Name="PublicationsDetailsView"/>
+                </TabItem>
+            </TabControl>
+        </Border>
+    </Grid>
+</Window>

@@ -1,1 +1,2 @@
 # Researcher-Assesment-Program
+Research Assessment Program (RAP) – This project was the second major assignment for KIT206 Software design and development unit. This assignment tested our ability in C#, SQL, .NET framework, WPF, Object Oriented Programming, source control and writing test cases. This assignment tasked my group with building software that can be used to assess the performance of academics at a university. 

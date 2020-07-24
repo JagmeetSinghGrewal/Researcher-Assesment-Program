@@ -60,13 +60,9 @@ namespace RAP.Model
             get { return available; }
             set { available = value; }
         }
-
         /////////Methods/////////
 
-        /// <summary>
-        /// Calculate the age of publications in days
-        /// </summary>
-        /// <returns>Return age in number of days</returns>
+        //calcualte the days since the text became available
         public int Age()
         {
             return (DateTime.Now - Available).Days; //current time - available

@@ -92,11 +92,6 @@ namespace RAP.Model
         }
 
         /////////Methods/////////
-
-        /// <summary>
-        /// Get current position
-        /// </summary>
-        /// <returns>Return current position</returns>
         public Position GetCurrentJob()
         {
             foreach (Position i in Positions)
@@ -109,28 +104,16 @@ namespace RAP.Model
             return null;
         }
 
-        /// <summary>
-        /// Return current job title
-        /// </summary>
-        /// <returns>Return current job title</returns>
         public string CurrentJobTitle()
         {
             return GetCurrentJob().Title; 
         }
 
-        /// <summary>
-        /// Return start date of current job
-        /// </summary>
-        /// <returns>Return start datetime</returns>
         public DateTime CurrentJobStart()
         {
             return GetCurrentJob().Start; 
         }
 
-        /// <summary>
-        /// Get the first ever position of the researcher at this instituion
-        /// </summary>
-        /// <returns>Returns position with the oldest start date</returns>
         public Position GetEarliestJob()
         {
             Position current = Positions[0];
@@ -146,10 +129,6 @@ namespace RAP.Model
             return current;
         }
 
-        /// <summary>
-        /// Calculate Tenure
-        /// </summary>
-        /// <returns>Return float representing tenure</returns>
         public float Tenure()
         {
 
@@ -170,10 +149,6 @@ namespace RAP.Model
             return (float)Math.Round(tenure, 2);//Check whether end is set, 
         }
 
-        /// <summary>
-        /// Count the number of publications for researcher
-        /// </summary>
-        /// <returns>count</returns>
         public int PublicationsCount()
         {
             int count = 0;
@@ -184,10 +159,6 @@ namespace RAP.Model
             return count;
         }
 
-        /// <summary>
-        /// Return the number of publication published in the last three years
-        /// </summary>
-        /// <returns>Count</returns>
         public int PublicationsCount3Year()
         {
             int count = 0;
@@ -201,23 +172,17 @@ namespace RAP.Model
             return count;
         }
 
-        /// <summary>
-        /// Calculate the cumulative count of publications starting from the researcher's first year of employment
-        /// </summary>
         public void calPubPerYear()
         {
             int cur = GetEarliestJob().Start.Year;
-            int prev = -1; //value to refer back to previous index of dictionary 
-
-            //
+            int prev = -1;
             while(cur <= DateTime.Now.Year)
             {
-                //Checks if this is the first loop, if so jsut get count of current year, else calculate count of current year and add count of previous year
+                cumulativeCount[cur.ToString()] = publications.Where(s => s != null && s.Year.Year == cur).Count();
                 if (prev == -1)
                 {
                     cumulativeCount[cur.ToString()] = publications.Where(s => s != null && s.Year.Year == cur).Count();
-                }
-                else
+                } else
                 {
                     cumulativeCount[cur.ToString()] = publications.Where(s => s != null && s.Year.Year == cur).Count() + cumulativeCount[prev.ToString()];
                 }

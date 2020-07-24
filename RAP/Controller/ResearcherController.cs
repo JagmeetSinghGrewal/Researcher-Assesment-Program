@@ -35,8 +35,6 @@ namespace RAP.Controller
             set { currentListCopy = value; }
         }
 
-        /////////Methods/////////
-
         /// <summary>
         /// <para>Basic ResearchController constructor</para>
         /// <para>Gets the basic researcher list and adds it to the view</para>
@@ -93,8 +91,7 @@ namespace RAP.Controller
 
             //Adds details to view
             Window.ResearcherDetailView.SetDetails(details);
-            Window.ResearcherDetailView.ActivatePubList();
-            Window.CumulativeCountView.LoadCumulativeCount(details);
+            Window.CumulativeCountView.loadCumulativeCount(details);
         }
     }
 }

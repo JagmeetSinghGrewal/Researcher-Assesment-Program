@@ -24,25 +24,18 @@
 
         <!--top border-->
         <Border BorderBrush="Black" BorderThickness="1" Grid.ColumnSpan="3" Height="Auto">
-            <!--Button to generate reports-->
-            <Button Content="Generate Reports" Margin="9.2,1.2,907.2,0.8" Click="Generate_Reports" Height="Auto" Width="100" HorizontalAlignment="Left"/>
+            <Button Content="Generate Reports" Margin="9.2,1.2,907.2,0.8" Click="Generate_Reports"/>
         </Border>
-        <!--Researcher list-->
         <View:ResearcherListView x:Name="ResearcherListView" Width="Auto" Height="Auto" Grid.Row="1" VerticalAlignment="Stretch"/>
-        <!--Researcher details-->
-        <View:ResearcherDetailsView x:Name="ResearcherDetailView" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="1"/>
-        <!--Third column-->
+        <View:ResearcherDetailsView x:Name="ResearcherDetailView" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="1" Loaded="ResearcherDetailView_Loaded" />
         <Border BorderBrush="Gray" BorderThickness="1" Grid.Column="2" Grid.Row="1" Width="Auto" Height="Auto" VerticalAlignment="Stretch">
             <TabControl>
-                <!--Supervisions list-->
                 <TabItem Header="Supervisions" Margin="0" Width="81">
                     <View:SupervisionsListView x:Name="SupervisionsListView"/>
                 </TabItem>
-                <!--Culmulative publications count-->
                 <TabItem Header="Cumulative Count" Margin="0" Width="117">
                     <View:CumulativeCountView x:Name="CumulativeCountView"/>
                 </TabItem>
-                <!--Publication details-->
                 <TabItem Header="Publication Details" Margin="0" Width="198">
                     <View:PublicationDetailsView x:Name="PublicationsDetailsView"/>
                 </TabItem>

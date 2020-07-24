@@ -6,7 +6,6 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
-            <!--Static Researcher Controller-->
             <Controller:ResearcherController x:Key="controller"/>
             <ObjectDataProvider x:Key="researcherlist"
                                 ObjectInstance="{StaticResource controller}"
@@ -19,4 +18,8 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
+    
+    <!--<Application.MainWindow>
+        <NavigationWindow Source="MainWindow.xaml" Visibility="Visible"></NavigationWindow>
+    </Application.MainWindow>-->
 </Application>

@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="RAP.View.SupervisionsListView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RAP.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="505" Width="205" MinHeight="556">
+    
+    <!--SupervisionsListView-->
+    <Grid x:Name="SupervisionsView_Grid" HorizontalAlignment="Left" Height="Auto" VerticalAlignment="Stretch" Width="205" MinWidth="170" Margin="0.284,0,0,0">
+        <!---Background-->
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="auto" VerticalAlignment="Stretch" Width="205" Panel.ZIndex="-1"/>
+        <!--Supervisions list-->
+        <TextBlock x:Name="SupervisionsListView_Display_Title" HorizontalAlignment="Left" Height="20" Margin="10,10,0,0" TextWrapping="Wrap" Text="Supervisions List" VerticalAlignment="Top" Width="185"/>
+        <ListBox x:Name="SupervisionsListView_Display_Box" HorizontalAlignment="Left" Height="Auto" Margin="10,35,0,0" VerticalAlignment="Stretch" Width="185" />
+    </Grid>
+</UserControl>

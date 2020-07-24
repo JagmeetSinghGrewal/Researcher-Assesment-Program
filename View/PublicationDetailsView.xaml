@@ -1,0 +1,53 @@
+﻿<UserControl x:Class="RAP.View.PublicationDetailsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RAP.View"
+             mc:Ignorable="d" Width="205" MinHeight="505">
+
+    <Grid x:Name="PublicationDetailsView_Grid" HorizontalAlignment="Left" Height="Auto" VerticalAlignment="Stretch" Width="205" MinWidth="170">
+        <!--Background of View-->
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="Auto" VerticalAlignment="Stretch" Width="205" Panel.ZIndex="-1">
+            <Rectangle Fill="#FFF4F4F5"/>
+        </Border>
+
+        <!--DOI-->
+        <TextBlock x:Name="PublicationDetailsView_DOI" HorizontalAlignment="Left" Height="18" Margin="10,10,0,0" TextWrapping="Wrap" Text="DOI:" VerticalAlignment="Top" Width="81"/>
+        <TextBlock x:Name="PublicationDetailsView_DOI_Value" HorizontalAlignment="Left" Height="39" Margin="58,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="137" RenderTransformOrigin="0.062,0.556"/>
+
+        <!--Titlle-->
+        <TextBlock x:Name="PublicationDetailsView_Title" HorizontalAlignment="Left" Height="18" Margin="10,54,0,0" TextWrapping="Wrap" Text="Title:" VerticalAlignment="Top" Width="81"/>
+        <TextBlock x:Name="PublicationDetailsView_Title_Value" HorizontalAlignment="Left" Height="Auto" Margin="58,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="137" RenderTransformOrigin="0.062,0.556"/>
+
+        <!--Authors-->
+        <TextBlock x:Name="PublicationDetailsView_Authors" HorizontalAlignment="Left" Height="18" Margin="10,167,0,0" TextWrapping="Wrap" Text="Authors:" VerticalAlignment="Top" Width="81"/>
+        <TextBlock x:Name="PublicationDetailsView_Authors_Value" HorizontalAlignment="Left" Height="56" Margin="58,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="137" RenderTransformOrigin="0.062,0.556"/>
+
+        <!--Publication Year-->
+        <TextBlock x:Name="PublicationDetailsView_PublicationYear" HorizontalAlignment="Left" Height="18" Margin="10,228,0,0" TextWrapping="Wrap" Text="Publication Year:" VerticalAlignment="Top" Width="89" RenderTransformOrigin="1.491,4.078"/>
+        <TextBlock x:Name="PublicationDetailsView_PublicationYear_Value" HorizontalAlignment="Left" Height="18" Margin="101,228,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="94" RenderTransformOrigin="0.062,0.556"/>
+
+        <!--Type-->
+        <TextBlock x:Name="PublicationDetailsView_Type" HorizontalAlignment="Left" Height="18" Margin="10,249,0,0" TextWrapping="Wrap" Text="Type:" VerticalAlignment="Top" Width="31"/>
+        <TextBlock x:Name="PublicationDetailsView_Type_Value" HorizontalAlignment="Left" Height="18" Margin="45,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" RenderTransformOrigin="0.062,0.556"/>
+
+        <!--Cite as-->
+        <TextBlock x:Name="PublicationDetailsView_CiteAs" HorizontalAlignment="Left" Height="18" Margin="11,318,0,0" TextWrapping="Wrap" Text="Cite As:" VerticalAlignment="Top" Width="81"/>
+        <Grid Margin="59,318,10,10">
+            <ScrollViewer Margin="0,0,-0.2,-0.2">
+                <TextBlock x:Name="PublicationDetailsView_CiteAs_Value" HorizontalAlignment="Left" Height="auto" TextWrapping="Wrap" VerticalAlignment="Top" Width="116" RenderTransformOrigin="0.062,0.556"/>
+            </ScrollViewer>
+        </Grid>
+      
+        <!--Availability Date-->
+        <TextBlock x:Name="PublicationDetailsView_AvailabilityDate" HorizontalAlignment="Left" Height="18" Margin="11,272,0,0" TextWrapping="Wrap" Text="Availability Date:" VerticalAlignment="Top" Width="95"/>
+        <TextBlock x:Name="PublicationDetailsView_AvailabilityDate_Value" HorizontalAlignment="Left" Height="18" Margin="101,272,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="94" RenderTransformOrigin="0.062,0.556"/>
+
+        <!--Age-->
+        <TextBlock x:Name="PublicationDetailsView_Age" HorizontalAlignment="Left" Height="18" Margin="11,295,0,0" TextWrapping="Wrap" Text="Age:" VerticalAlignment="Top" Width="31"/>
+        <TextBlock x:Name="PublicationDetailsView_Age_Value" HorizontalAlignment="Left" Height="18" Margin="45,295,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" RenderTransformOrigin="0.062,0.556"/>
+
+
+    </Grid>
+</UserControl> 

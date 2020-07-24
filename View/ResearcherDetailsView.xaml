@@ -1,0 +1,99 @@
+﻿<UserControl x:Class="RAP.View.ResearcherDetailsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RAP.View"
+             mc:Ignorable="d" MinWidth="606" MinHeight="556">
+
+    <!-- Researcher Details Column -->
+    <Grid x:Name="ResearcherDetailsView_Grid" HorizontalAlignment="Stretch" Height="Auto" VerticalAlignment="Stretch" Width="Auto" Margin="0,0,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="142"/>
+            <RowDefinition Height="95*"/>
+            <RowDefinition Height="87"/>
+            <RowDefinition Height="232*"/>
+        </Grid.RowDefinitions>
+        <Image x:Name="ResearcherDetailsView_ProfileImage" HorizontalAlignment="Right" Height="134" Margin="0,10,10,0" VerticalAlignment="Top" Width="103" Grid.RowSpan="2"/>
+
+        <!--Name-->
+        <TextBlock x:Name="ResearcherDetailsView_Name" HorizontalAlignment="Left" Height="18" Margin="10,10,0,0" TextWrapping="Wrap" Text="Name:" VerticalAlignment="Top" Width="73"/>
+        <TextBlock x:Name="ResearcherDetailsView_Name_Value" HorizontalAlignment="Left" Margin="63,10,0,63" TextWrapping="Wrap" Width="117"/>
+
+        <!--Title-->
+        <TextBlock x:Name="ResearcherDetailsView_Title" HorizontalAlignment="Left" Height="18" Margin="10,33,0,0" TextWrapping="Wrap" Text="Title:" VerticalAlignment="Top" Width="73"/>
+        <TextBlock x:Name="ResearcherDetailsView_Title_Value" HorizontalAlignment="Left" Height="18" Margin="63,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="117"/>
+
+        <!--Unit-->
+        <TextBlock x:Name="ResearcherDetailsView_Unit" HorizontalAlignment="Left" Height="18" Margin="10,56,0,0" TextWrapping="Wrap" Text="Unit:" VerticalAlignment="Top" Width="73"/>
+        <TextBlock x:Name="ResearcherDetailsView_Unit_Value" HorizontalAlignment="Left" Height="18" Margin="63,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="117"/>
+
+        <!--Campus-->
+        <TextBlock x:Name="ResearcherDetailsView_Campus" HorizontalAlignment="Left" Height="18" Margin="214,33,0,0" TextWrapping="Wrap" Text="Campus:" VerticalAlignment="Top" Width="48"/>
+        <TextBlock x:Name="ResearcherDetailsView_Campus_Value" HorizontalAlignment="Left" Height="18" Margin="267,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="221"/>
+
+        <!--Email-->
+        <TextBlock x:Name="ResearcherDetailsView_Email" HorizontalAlignment="Left" Height="18" Margin="214,10,0,0" TextWrapping="Wrap" Text="Email:" VerticalAlignment="Top" Width="48"/>
+        <TextBlock x:Name="ResearcherDetailsView_Email_Value" HorizontalAlignment="Left" Height="18" Margin="267,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="221"/>
+
+        <!--Current Job-->
+        <TextBlock x:Name="ResearcherDetailsView_CurrentJob" HorizontalAlignment="Left" Height="18" Margin="10,79,0,0" TextWrapping="Wrap" Text="Current Job:" VerticalAlignment="Top" Width="73"/>
+        <TextBlock x:Name="ResearcherDetailsView_CurrentJob_Value" HorizontalAlignment="Left" Height="18" Margin="83,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="259"/>
+
+        <!--Commenced at Institution-->
+        <TextBlock x:Name="ResearcherDetailsView_ComInst" HorizontalAlignment="Left" Height="18" Margin="10,103,0,0" TextWrapping="Wrap" Text="Commenced with institution:" VerticalAlignment="Top" Width="170"/>
+        <TextBlock x:Name="ResearcherDetailsView_ComInst_Value" HorizontalAlignment="Left" Height="18" Margin="186,103,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="156"/>
+
+        <!--Commenced at Current Position-->
+        <TextBlock x:Name="ResearcherDetailsView_ComPos" HorizontalAlignment="Left" Height="18" Margin="10,126,0,0" TextWrapping="Wrap" Text="Commenced current position:" VerticalAlignment="Top" Width="170" Grid.RowSpan="2"/>
+        <TextBlock x:Name="ResearcherDetailsView_ComPos_Value" HorizontalAlignment="Left" Height="18" Margin="186,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="156" Grid.RowSpan="2"/>
+
+        <!--Tenure-->
+        <TextBlock x:Name="ResearcherDetailsView_Tenure" HorizontalAlignment="Left" Height="18" Margin="10,1,0,0" TextWrapping="Wrap" Text="Tenure:" VerticalAlignment="Top" Width="48" Grid.Row="2"/>
+        <TextBlock x:Name="ResearcherDetailsView_Tenure_Value" HorizontalAlignment="Left" Height="18" Margin="63,1,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="73" Grid.Row="2"/>
+
+        <!--3 year average-->
+        <TextBlock x:Name="ResearcherDetailsView_3YAv" HorizontalAlignment="Left" Height="18" Margin="10,24,0,0" TextWrapping="Wrap" Text="3-Year average:" VerticalAlignment="Top" Width="92" Grid.Row="2"/>
+        <TextBlock x:Name="ResearcherDetailsView_3YAv_Value" HorizontalAlignment="Left" Height="18" Margin="107,24,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="29" Grid.Row="2"/>
+
+        <!--Supervisions-->
+        <TextBlock x:Name="ResearcherDetailsView_Supervisions" HorizontalAlignment="Left" Height="18" Margin="10,47,0,0" TextWrapping="Wrap" Text="Supervisions:" VerticalAlignment="Top" Width="73" Grid.Row="2"/>
+        <TextBlock x:Name="ResearcherDetailsView_Supervisions_Value" HorizontalAlignment="Left" Height="18" Margin="88,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="48" Grid.Row="2"/>
+
+        <!--Degree-->
+        <TextBlock x:Name="ResearcherDetailsView_Degree" HorizontalAlignment="Left" Height="18" Margin="10,70,0,0" TextWrapping="Wrap" Text="Degree:" VerticalAlignment="Top" Width="48" Grid.Row="2" Grid.RowSpan="2"/>
+        <TextBlock x:Name="ResearcherDetailsView_Degree_Value" HorizontalAlignment="Left" Height="18" Margin="63,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="98" Grid.Row="2" Grid.RowSpan="2"/>
+
+        <!--Supervisor-->
+        <TextBlock x:Name="ResearcherDetailsView_Supervisor" HorizontalAlignment="Left" Height="18" Margin="186,47,0,0" TextWrapping="Wrap" Text="Supervisor:" VerticalAlignment="Top" Width="65" Grid.Row="2"/>
+        <TextBlock x:Name="ResearcherDetailsView_Supervisor_Value" HorizontalAlignment="Left" Height="18" Margin="267,47.2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" Grid.Row="2"/>
+
+        <!--Publications-->
+        <TextBlock x:Name="ResearcherDetailsView_Publications" HorizontalAlignment="Left" Height="18" Margin="186,1,0,0" TextWrapping="Wrap" Text="Publications:" VerticalAlignment="Top" Width="81" Grid.Row="2"/>
+        <TextBlock x:Name="ResearcherDetailsView_Publications_Value" HorizontalAlignment="Left" Height="18" Margin="267,1,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="19" RenderTransformOrigin="0.062,0.556" Grid.Row="2"/>
+
+        <!--Performance-->
+        <TextBlock x:Name="ResearcherDetailsView_Performance" HorizontalAlignment="Left" Height="18" Margin="186,24,0,0" TextWrapping="Wrap" Text="Performance:" VerticalAlignment="Top" Width="81" Grid.Row="2"/>
+        <TextBlock x:Name="ResearcherDetailsView_Performance_Value" HorizontalAlignment="Left" Height="18" Margin="267,24,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="47" RenderTransformOrigin="0.062,0.556" Grid.Row="2"/>
+
+        <!--Previous Positions-->
+        <TextBlock x:Name="ResearcherDetailsView_PrevPos" HorizontalAlignment="Left" Height="18" Margin="10,1,0,0" TextWrapping="Wrap" Text="Previous positions:" VerticalAlignment="Top" Width="106" Grid.Row="1"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="Auto" Margin="10,17,0,4" VerticalAlignment="Stretch" Width="454" Grid.Row="1">
+            <DataGrid x:Name="ResearcherDetailsView_PrevPos_Data" Height="Auto" Margin="0,0,-1,-1" VerticalAlignment="Stretch" AutoGenerateColumns="False" IsReadOnly="True" HorizontalScrollBarVisibility="Disabled">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Title" Binding="{Binding Path=Title}" Width="*"/>
+                    <DataGridTextColumn Header="Start" Binding="{Binding Path=Start, StringFormat=dd/MM/yyyy }" Width="*"/>
+                    <DataGridTextColumn Header="End" Binding="{Binding Path=End, StringFormat=dd/MM/yyyy }" Width="*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Border>
+
+        <!--Publications List-->
+        <local:PublicationsListView x:Name="PublicationsListView" Margin="7,6,0,10" Height="Auto" Width="Auto" Grid.Row="3"/>
+
+        <!--Background-->
+        <Border BorderBrush="Gray" BorderThickness="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" Panel.ZIndex="-1" Grid.RowSpan="4">
+            <Rectangle Fill="#FFF4F4F5" Stroke="Black"/>
+        </Border>
+    </Grid>
+</UserControl>

@@ -79,8 +79,7 @@ namespace RAP.Database
                                 Title = rdr.GetString(2),
                                 GivenName = rdr.GetString(3),
                                 FamilyName = rdr.GetString(4),
-                                Supervisor = rdr.GetInt32(5),
-                                Email = rdr.GetString(6)
+                                Supervisor = rdr.GetInt32(5)
                             });
                             break;
                         case "Staff":
@@ -90,8 +89,7 @@ namespace RAP.Database
                                 Type = rdr.GetString(1),
                                 Title = rdr.GetString(2),
                                 GivenName = rdr.GetString(3),
-                                FamilyName = rdr.GetString(4),
-                                Email = rdr.GetString(6)
+                                FamilyName = rdr.GetString(4)
                             });
                             break;
                     }
@@ -129,6 +127,10 @@ namespace RAP.Database
                     r.Positions = new List<Model.Position>();
                     r.Positions.Add(new Model.Position { Level = Model.EmploymentLevel.Student, Start = default(DateTime), End = default(DateTime) });
                 }
+                //foreach (Model.Position i in r.Positions)
+                //{
+                //    Console.WriteLine("{0}{1}{2}", i.Level, i.Start, i.End);
+                //}
             }
             
             return researchers;
@@ -142,8 +144,8 @@ namespace RAP.Database
         /// <returns>A complete researcher object</returns>
         public static Model.Researcher FetchFullResearcherDetails(int id, List<Model.Researcher> researchers)
         {
-            Model.Researcher researcher = null; //Researcher data object being returned
-            MySqlDataReader rdr = null; //MySQL data reader
+            Model.Researcher researcher = null;
+            MySqlDataReader rdr = null;
             
 
             GetConnection();
@@ -184,7 +186,6 @@ namespace RAP.Database
                             student.Positions = new List<Model.Position>();
                             student.Positions.Add(new Model.Position { Level = Model.EmploymentLevel.Student, Start = rdr.GetDateTime(12), End = default(DateTime) });
 
-                            //Get supervisor
                             foreach(Model.Researcher i in researchers)
                             {
                                 if(student.Supervisor == i.ID)
@@ -195,7 +196,6 @@ namespace RAP.Database
                             researcher = student;
                             break;
                         case "Staff":
-                            //Get any supervisions the staff member
                             List<Model.Student> supervisions = new List<Model.Student>();
                             foreach (Model.Researcher i in researchers)
                             {
@@ -247,7 +247,7 @@ namespace RAP.Database
                 }
             }
             
-            //Get any previous positions that staff members have held
+            //check if researcher is student or staff
             if(researcher.Type != "Student")
             {
                 researcher.Positions = FetchPositions(researcher.ID);
@@ -321,11 +321,6 @@ namespace RAP.Database
             return positions;
         }
 
-        /// <summary>
-        /// returns basic publication details for a researcher
-        /// </summary>
-        /// <param name="researcher"></param>
-        /// <returns>A list of publications</returns>
         public static List<Model.Publication> fetchBasicPublicationDetails(Model.Researcher researcher)
         {
             int id = researcher.ID;
@@ -343,7 +338,7 @@ namespace RAP.Database
                 db_conn.Open();
 
                 //Create command, including database connection 
-                MySqlCommand cmd = new MySqlCommand("SELECT doi FROM researcher_publication WHERE researcher_id=?id", db_conn); //get the ids of the publications for the researcher
+                MySqlCommand cmd = new MySqlCommand("SELECT doi FROM researcher_publication WHERE researcher_id=?id", db_conn);
                 cmd.Parameters.AddWithValue("id", id);
                 rdr = cmd.ExecuteReader();
 
@@ -373,7 +368,7 @@ namespace RAP.Database
             }
 
 
-            //for each id, fetch the basic publication details
+
             foreach (string doi in dois)
             {
 

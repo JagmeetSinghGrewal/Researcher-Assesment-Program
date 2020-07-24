@@ -3,18 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
 
 namespace RAP.Controller
 {
     enum Report { Poor, Below, Meeting, Star};
     class ReportsController
     {
-        private List<Model.Staff> poor = new List<Model.Staff>(); //List of staff with Poor metric
-        private List<Model.Staff> below = new List<Model.Staff>(); //List of staff with Below expectations metric
-        private List<Model.Staff> meeting = new List<Model.Staff>(); //List of staff with Meeting Minimum metric
-        private List<Model.Staff> star = new List<Model.Staff>(); //List of staff with Star Performer metric
-        private Controller.PublicationController pubController = new Controller.PublicationController(); //Publications controller
+        private List<Model.Staff> poor = new List<Model.Staff>();
+        private List<Model.Staff> below = new List<Model.Staff>();
+        private List<Model.Staff> meeting = new List<Model.Staff>();
+        private List<Model.Staff> star = new List<Model.Staff>();
+        private Controller.PublicationController pubController = new Controller.PublicationController();
 
         public List<Model.Staff> Poor
         {
@@ -36,12 +35,6 @@ namespace RAP.Controller
             get { return star; }
         }
 
-        /////////Methods/////////
-
-        /// <summary>
-        /// Adds each staff member to their respective performance list
-        /// </summary>
-        /// <param name="researchers">List of all researchers</param>
         public void Generate(List<Model.Researcher> researchers)
         {
 
@@ -73,24 +66,20 @@ namespace RAP.Controller
 
         }
 
-        /// <summary>
-        /// Create the data object representing the report list
-        /// </summary>
-        /// <param name="type">Enumeration of specific report</param>
-        /// <returns></returns>
         public IDictionary<Model.Researcher, float> Create_Table(Report type)
         {
             IDictionary<Model.Researcher, float> report;
-            List<Model.Staff> staff; //variable to hold the staff of certain performance
+            List<Model.Staff> staff;
             
-            //select the type of report
             switch (type)
             {
                 case Report.Poor:
                     staff = Poor;
+                    
                     break;
                 case Report.Below:
                     staff = Below;
+                    
                     break;
                 case Report.Meeting:
                     staff = Meeting;
@@ -100,60 +89,26 @@ namespace RAP.Controller
                     break;
             }
             
-            //Order the list in its appropriate order
             if (type ==Report.Below || type ==Report.Poor)
             {
                 var filtered = from Model.Staff s in staff
                                orderby s.Performance() ascending
                                select s;
                 report = filtered.ToDictionary(s=>(Model.Researcher)s, s=>s.Performance());
-            }
-            else
+            } else
             {
                 var filtered = from Model.Staff s in staff
                                orderby s.Performance() descending
                                select s;
                 report = filtered.ToDictionary(s => (Model.Researcher)s, s => s.Performance());
             }
-
             return report;
         }
 
-        /// <summary>
-        /// Copies the email addresses of all staff members in the current list into the user's clipboard
-        /// </summary>
-        /// <param name="type">Enumeration of current report</param>
-        public void Generate_Emails_List(Report type)
+        public List<string> Generate_Emails_List(Report type)
         {
-            string emails = "";
-            List<Model.Staff> staff;
 
-            //Order the list in its appropriate order
-            switch (type)
-            {
-                case Report.Poor:
-                    staff = Poor;
-                    break;
-                case Report.Below:
-                    staff = Below;
-                    break;
-                case Report.Meeting:
-                    staff = Meeting;
-                    break;
-                default:
-                    staff = Star;
-                    break;
-            }
-
-            //Add emails into string
-            foreach (Model.Staff i in staff)
-            {
-                emails += i.Email + " ";
-            }
-
-            //copy emails to clipboard
-            Clipboard.SetText(emails);
-            MessageBox.Show("Emails copied to the clipboard!");
+            return null;
         }
     }
 }

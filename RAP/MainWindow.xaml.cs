@@ -31,11 +31,16 @@ namespace RAP
 
         }
 
-        /// <summary>
-        /// Generates reports view
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        private void CumulativeCountView_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ResearcherDetailView_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
+
         private void Generate_Reports(object sender, RoutedEventArgs e)
         {
             View.Reports reports = new View.Reports();

@@ -9,9 +9,9 @@ namespace RAP.Controller
 {
     class PublicationController
     {
-        private Model.Researcher currentResearcher; //Currently displayed researcher details
-        private List<Model.Publication> currentListCopy; //Copy of the currently displayed researcher list
-        private MainWindow Window { get { return Application.Current.MainWindow as MainWindow; } } //Main application window
+        private Model.Researcher currentResearcher;
+        private List<Model.Publication> currentListCopy;
+        private MainWindow Window { get { return Application.Current.MainWindow as MainWindow; } }
 
         public Model.Researcher CurrentResearcher
         {
@@ -31,8 +31,6 @@ namespace RAP.Controller
         {
             
         }
-
-        /////////Methods/////////
 
         /// <summary>
         /// Loads all publications for a given researcher

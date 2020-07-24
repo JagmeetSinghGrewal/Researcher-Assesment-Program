@@ -38,14 +38,6 @@ namespace RAP.Model
             get { return ToTitle(Level); }
         }
 
-
-        /////////Methods/////////
-
-        /// <summary>
-        /// "Converts" enum of employment level to a string
-        /// </summary>
-        /// <param name="l"></param>
-        /// <returns>String of title that was represented by enum</returns>
         public string ToTitle(EmploymentLevel l)
         {
             string job = "N/A";
